@@ -1,0 +1,52 @@
+<div class="content">
+   <div class="addcontact">
+      <div class="alert alert_addcontact alert-primary alert-dismissible fade show" role="alert">
+         <strong>Awww yeah!</strong> Looks like it's time to add some new contacts.
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+         <span aria-hidden="true">&times;</span>
+         </button>
+      </div>
+
+      <div class="addcontact_form">
+        <form class="form_addcontact col-md-12" #contactForm ="ngForm" (ngSubmit)="saveContact()">
+          <small id="emailHelp" class="form-text text-muted">Note: Please fill all the fields below.</small>
+          <div class="form-group"  [class.has-error]="name.invalid && name.touched" [class.has.success]="name.valid">
+            <label class="sr-only control-label" for="name">Name</label>
+            <div class="input-group ">
+               <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-address-book-o" aria-hidden="true"></i></div>
+               </div>
+               <input required type="text" class="form-control col-xs-6" name="name" [(ngModel)]="contact.name"  id="name" placeholder="Name" #name="ngModel">
+            </div>
+            <div class="help-block" *ngIf="name.invalid && name.touched">Name is required</div>
+          </div>
+          <div class="form-group" [class.has-error]="phone.invalid && phone.touched" [class.has.success]="phone.valid">
+            <label class="sr-only" for="phone">Phone No.</label>
+            <div class="input-group">
+               <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-phone" aria-hidden="true"></i></div>
+               </div>
+               <input required type="text" class="form-control col-xs-6" name="phone" [(ngModel)]="contact.phone" id="phone" placeholder="Phone No." #phone="ngModel">
+            </div>
+            <div class="help-block " *ngIf="phone.invalid && phone.touched">Phone is required</div>
+          </div>
+          <div class="form-group" [class.has-error]="email.invalid && email.touched" [class.has.success]="email.valid">
+            <label class="sr-only" for="email">Email</label>
+            <div class="input-group">
+               <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+               </div>
+               <input required [email]="contact.email!==''" type="text" class="form-control col-xs-6" name="email" [(ngModel)]="contact.email" id="email" placeholder="Email" #email="ngModel">
+            </div>
+            <div class="help-block " *ngIf="email.errors?.required && email.touched">Email is required</div>
+            <div class="help-block " *ngIf="email.errors?.email && email.touched">Email is invalid</div>
+          </div>
+          <div class="col-auto form-group bg-grey1">
+           <button data-hover="Awesome!" type="submit" class="btn btn-sm"  [disabled]="contactForm.invalid">
+              <div><i class="fa fa-check-circle-o fa-2x" aria-hidden="true"></i></div>
+           </button>
+          </div>
+      </form>
+</div>
+</div>
+</div>

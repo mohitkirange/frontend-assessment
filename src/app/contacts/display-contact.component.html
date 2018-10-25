@@ -1,0 +1,26 @@
+<div class="card">
+<div class=" card-body">
+   <div class="row my-custom-width">
+      <div class="col-sm-1 bg-grey">
+         <img class="" src="../assets/man-1.png" alt="img-fluid" height="50px" width="50px">
+      </div>
+      <div class="col-sm-3 bg-grey">
+         <h5 class="card-title">Name</h5>
+         <h6 class="card-subtitle">{{contact.name}}</h6>
+      </div>
+      <div class="col-sm-3 bg-grey">
+         <h5 class="card-title">Email</h5>
+         <h6 class="card-subtitle">{{contact.email}}</h6>
+      </div>
+      <div class="col-sm-3 bg-grey">
+         <h5 class="card-title">Phone</h5>
+         <h6 class="card-subtitle">{{contact.phone}}</h6>
+      </div>
+      <div class="col-sm-2 bg-grey">
+         <button data-hover="Sure?" class="btn btn-sm" (click)= "deleteContact()">
+            <div><i class="fa fa-trash-o fa-lg" aria-hidden="true" ></i></div>
+         </button>
+      </div>
+   </div>
+</div>
+</div>

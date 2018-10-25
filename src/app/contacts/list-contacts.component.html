@@ -1,0 +1,17 @@
+<div class="content">
+   <div class="contact_list">
+      <div class="alert alert_listcontact alert-primary alert-dismissible fade show" role="alert">
+         <strong>Holy guacamole!</strong> You should check in on some of those contacts below.
+         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+         <span aria-hidden="true">&times;</span>
+         </button>
+      </div>
+      <h5 class="main-title">Contact List</h5>
+      <div *ngFor = "let contact of contacts">
+         <app-display-contact [contact]="contact"></app-display-contact>
+      </div>
+      <div class="alert alert_listcontact alert-primary" role="alert">
+         <strong>Damn.</strong> You reached the bottom. Maybe try adding some more contacts.
+      </div>
+   </div>
+</div>
